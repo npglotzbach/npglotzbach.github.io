@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>To Shelby:</title>
+		<style>
+			#text {
+				display: block;
+				position: fixed;
+				top: calc(50% - 100px);
+				left: 0px;
+				height: 200px;
+				width: 100%;
+				font-family: sans-serif;
+				font-size: 150px;
+				font-weight: 900;
+				text-align: center;
+				line-height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="text">Yes!</div>
+		<script>
+		window.setInterval(recolor,250);
+		function recolor() {
+			var color = [];
+			var invcolor = [];
+			for(var i = 0; i < 3; i++) {
+				color[i] = Math.floor(Math.random() * 255);
+				invcolor[i] = Math.abs(color[i] - 255);
+			}
+			document.body.style.backgroundColor = "rgb(" + color.toString() + ")";
+			document.querySelector("#text").style.color = "rgb(" + invcolor.toString() + ")";
+		}
+		</script>
+	</body>
+</html>
